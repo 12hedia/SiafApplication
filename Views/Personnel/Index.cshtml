@@ -1,0 +1,119 @@
+﻿@model IEnumerable<SiafManagementStudio.Models.PersonnelTable>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ville)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Civilite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatriculeCnss)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Niveau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateNaissance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LieuNaissance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departement.Depatement)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ville)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Civilite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatriculeCnss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricule)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Niveau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateNaissance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LieuNaissance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departement.Depatement)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

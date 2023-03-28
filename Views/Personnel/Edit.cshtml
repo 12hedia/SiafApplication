@@ -1,0 +1,102 @@
+﻿@model SiafManagementStudio.Models.PersonnelTable
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PersonnelTable</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nom" class="control-label"></label>
+                <input asp-for="Nom" class="form-control" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prenom" class="control-label"></label>
+                <input asp-for="Prenom" class="form-control" />
+                <span asp-validation-for="Prenom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adress" class="control-label"></label>
+                <input asp-for="Adress" class="form-control" />
+                <span asp-validation-for="Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ville" class="control-label"></label>
+                <input asp-for="Ville" class="form-control" />
+                <span asp-validation-for="Ville" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cp" class="control-label"></label>
+                <input asp-for="Cp" class="form-control" />
+                <span asp-validation-for="Cp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Civilite" class="control-label"></label>
+                <input asp-for="Civilite" class="form-control" />
+                <span asp-validation-for="Civilite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatriculeCnss" class="control-label"></label>
+                <input asp-for="MatriculeCnss" class="form-control" />
+                <span asp-validation-for="MatriculeCnss" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Matricule" class="control-label"></label>
+                <input asp-for="Matricule" class="form-control" />
+                <span asp-validation-for="Matricule" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Login" class="control-label"></label>
+                <input asp-for="Login" class="form-control" />
+                <span asp-validation-for="Login" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Niveau" class="control-label"></label>
+                <input asp-for="Niveau" class="form-control" />
+                <span asp-validation-for="Niveau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cin" class="control-label"></label>
+                <input asp-for="Cin" class="form-control" />
+                <span asp-validation-for="Cin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateNaissance" class="control-label"></label>
+                <input asp-for="DateNaissance" class="form-control" />
+                <span asp-validation-for="DateNaissance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LieuNaissance" class="control-label"></label>
+                <input asp-for="LieuNaissance" class="form-control" />
+                <span asp-validation-for="LieuNaissance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartementId" class="control-label"></label>
+                @Html.DropDownList("DepartementId", new SelectList(ViewBag.x, "Id", "Depatement"), new { @class="form-control" })
+
+                <span asp-validation-for="DepartementId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

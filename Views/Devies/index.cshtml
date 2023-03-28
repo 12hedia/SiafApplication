@@ -1,0 +1,305 @@
+﻿@*@{
+        ViewData["Title"] = "Index";
+    }*@
+
+<centre>
+    <h1>Devis N : 1</h1>
+</centre>
+<form>
+    <fieldset>
+        <legend> Client </legend>
+
+        <table>
+            <tr>
+                <td> <label> Nom de client : </label> </td>
+                <td>
+                    <select>
+                        <option>Default</option>
+                        <option>mohamed</option>
+                        <option>ali</option>
+                    </select>
+
+                </td>
+                <td> <a href="#"> Ajouter client </a></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend> Piéce </legend>
+        <table>
+            <tr>
+                <td>
+                    <label for=""> Désignation </label>
+                </td>
+                <td>
+                    <select>
+                        <option>Default</option>
+                        <option>produit 1</option>
+                        <option>produit 2</option>
+                    </select>
+                </td>
+                <td>
+                    <label for=""> Prix unitaire</label>
+                    <input type="text">
+                </td>
+                <td>
+                    <label for="">Quantité</label>
+                    <input type="number" name="quantite">
+                </td>
+            </tr>
+            
+        </table>
+
+        <fieldset>
+
+            <legend>Matiere</legend>
+            <table>
+                <tr>
+                    <td>
+                        <input type="radio" name="rad1"> <label for=""> Matiere Plat</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="rad1"> <label for=""> Matiere Round</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div name="matiere_palt">
+                            <fieldset>
+                                <legend>Matiere Plat </legend>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label for="">Longueur</label> <br>
+                                        </td>
+
+                                        <td>
+                                            <input type="number" name="longeur_plat" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="">Largeur</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="largeur_plat" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="">Hauteur</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="hauteur_plat" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="">Poid</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="poid_plat" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="">Prix</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="prix_plat" required>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div name="matiere_round">
+                            <fieldset>
+                                <legend>Matiere Plat </legend>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label for="">Longueur</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="longeur_round" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="">Diametre</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="largeur_round" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="">Poid</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="poid_round" required>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="">Prix</label>
+                                        </td>
+                                        <td>
+                                            <input type="number" name="prix_round" required>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </fieldset>
+
+                        </div>
+
+
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+
+        <fieldset>
+            <legend> Fabrication </legend>
+            <table>
+                <tr>
+                    <td> Type : </td>
+                    <td>
+                        <input type="checkbox" name="fraissage">
+                        <label for="">Fraisage</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="tournage">
+                        <label for="">Tournage</label>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for=""> Nombre D'heure de fraisage</label>
+                                </td>
+                                <td>
+                                    <input type="number">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for=""> Prix unitaire de fraisage</label>
+                                </td>
+                                <td>
+                                    <input type="number">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for=""> Cout de fraisage</label>
+                                </td>
+                                <td>
+                                    <input type="number">
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for=""> Nombre D'heure de tournage</label>
+                                </td>
+                                <td>
+                                    <input type="number">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for=""> Prix unitaire de  tournage</label>
+                                </td>
+                                <td>
+                                    <input type="number">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for=""> Cout de  tournage</label>
+                                </td>
+                                <td>
+                                    <input type="number">
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>Soutretance </legend>
+            <table>
+                <tr>
+                    <td> <label for="designe_sout">Désignation :</label> </td>
+                    <td> <input type="text" name="designe_sout"></td>
+                    <td><label for=""> Cout</label></td>
+                    <td><input type="text" name="prix_sout"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+        <br>
+        <input type="submit" value="Ajouter">
+    </fieldset>
+</form>
+<br>
+<br>
+
+<center>
+    <table border="0">
+        <tr>
+            <td> Piece </td>
+            <td> Prix revient</td>
+            <td> Prix de vente</td>
+            <td> Quantité</td>
+            <td> cout matiere </td>
+            <td>totale</td>
+            <td>supprimer</td>
+            <td>modifier</td>
+        </tr>
+        <tr>
+            <td> ddqhdbfgh</td>
+            <td> 25465.54</td>
+            <td> 3546.5645</td>
+            <td> 2</td>
+            <td> 65464.59 </td>
+            <td>856594.565</td>
+            <td><button>supprimer</button></td>
+            <td><button>modifier</button></td>
+        </tr>
+        <tr>
+            <td> ddqhdbfgh</td>
+            <td> 25465.54</td>
+            <td> 3546.5645</td>
+            <td> 2</td>
+            <td> 65464.59 </td>
+            <td>856594.565</td>
+            <td><button>supprimer</button></td>
+            <td><button>modifier</button></td>
+        </tr>
+    </table>
+</center>
+<footer>
+    <button> Imprimer devis</button>
+
+</footer>
+

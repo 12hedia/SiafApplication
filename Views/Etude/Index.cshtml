@@ -1,0 +1,133 @@
+﻿@model IEnumerable<SiafManagementStudio.ADO.etudeADO>
+
+    @*@{
+            ViewData["Title"] = "Index";
+        }*@
+
+
+    <h4>Planification et suivi de conception FOR-ETM-01_@DateTime.Now.Year</h4>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <h4>FT</h4>
+                </th>
+                <th>
+                    <h4>Projet</h4>
+                </th>
+                <th>
+                    <h4>Client</h4>
+                </th>
+                <th>
+                    <h4>Chef de Projet</h4>
+                </th>
+                <th>
+                    <h4>Nbr OF</h4>
+                </th>
+                <th>
+                    <h4>BC</h4>
+                </th>
+
+                <th>
+                    <h4>Date BC</h4>
+                </th>
+                <th>
+                    <h4>Fin Prev</h4>
+                </th>
+                <th>
+                    <h4>Fin Etude</h4>
+                </th>
+                <th>
+                    <h4>Livraison</h4>
+                </th>
+
+                <th>
+                    <h4>Retard</h4>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.etude.NumFicheTechnique)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.etude.NomDeProjet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.etude.IdClientNavigation.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.etude.NbrFt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.etude.NumBc)
+                </td>
+
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.DateDeb)*@
+                    @item.etude.DateDeb.ToString("dd-MM-yyyy")
+                </td>
+                <td>
+                    @item.etude.DateFinPrev.ToString("dd-MM-yyyy")
+                </td>
+                <td>
+                    @if (@item.etude.DateFin.ToString("dd-MM-yyyy") != "01-01-0001")
+                    {
+                    @item.etude.DateFin.ToString("dd-MM-yyyy")
+                    }
+                </td>
+                <td>
+                    @item.etude.DateLivraison.ToString("dd-MM-yyyy")
+                </td>
+
+
+                @if (@item.etude.DateFin.ToString("dd-MM-yyyy") == "01-01-0001")
+                    {
+                <td>
+                    <p>en Cour @item.etude.DateFinPrev.Subtract(ViewBag.datenow).Days</p>
+                </td>
+                    }
+                else if (@item.etude.DateFinPrev.Subtract(@item.etude.DateFin).Days >= 0)
+                        {
+                <td>
+                    <p>@item.etude.DateFinPrev.Subtract(@item.etude.DateFin).Days</p>
+                </td>
+                        }
+                        else
+                        {
+                <td>
+                    <p>@item.etude.DateFinPrev.Subtract(@item.etude.DateFin).Days</p>
+                </td>
+                        }
+
+                <td>
+                    <input type="button" value="Fin Etude" onclick="if (confirm('Are you sure?')) { window.location.href = '@Url.Action("FinEtude", "Etude", new { id = @item.etude.Id })'; }" />
+                    @*<input type="button" value="Fin Projet" onclick="if (confirm('Are you sure?')) { window.location.href = '@Url.Action("FinProjet", "Etude", new { TaskID = item.Id })'; }" />*@
+
+                    @*  <a onclick="myFunction()" asp-action="FinEtude" asp-route-id="@item.Id">Fin Etude</a>*@
+                    <a asp-action="Edit" asp-route-id="@item.etude.Id">Edit</a>
+                    @*//<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        //<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>*@
+                </td>
+            </tr>
+}
+        </tbody>
+    </table>
+    <script>
+        function myFunction() {
+            confirm("Press a button!");
+        }
+    </script>
